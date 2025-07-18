@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<div class="home">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>{{ page.title }}</h1>
+      {{ content }}
+    </div>
+  </section>
+
+  <section class="features">
+    {% for feature in site.data.features %}
+    <div class="feature">
+      <h3>{{ feature.title }}</h3>
+      <p>{{ feature.description }}</p>
+    </div>
+    {% endfor %}
+  </section>
+</div>

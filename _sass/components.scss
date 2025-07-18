@@ -1,0 +1,65 @@
+.hero {
+  padding: $spacing-unit * 4 0;
+  background-color: $light-gray;
+  text-align: center;
+  
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    margin-bottom: $spacing-unit;
+    color: $primary-color;
+  }
+}
+
+.features {
+  margin: $spacing-unit * 4 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: $spacing-unit * 2;
+  
+  .feature {
+    padding: $spacing-unit * 2;
+    background-color: $light-gray;
+    border-radius: 8px;
+    text-align: center;
+    
+    h3 {
+      color: $primary-color;
+      margin-bottom: $spacing-unit;
+    }
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: $spacing-unit / 2 $spacing-unit;
+  background-color: $primary-color;
+  color: white;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    color: white;
+  }
+  
+  &.btn-secondary {
+    background-color: $secondary-color;
+    
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+    }
+  }
+  
+  &.btn-accent {
+    background-color: $accent-color;
+    
+    &:hover {
+      background-color: darken($accent-color, 10%);
+    }
+  }
+}
