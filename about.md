@@ -104,8 +104,8 @@ title: About SwissCHI Pathways
     <p>We welcome students from all Swiss universities and educational institutions who are interested in Human-Computer Interaction. Whether you're studying computer science, design, psychology, or any related field, there's a place for you in our community.</p>
     
     <div class="cta-container">
-      <a href="/join" class="btn btn-primary">Become a Member</a>
-      <a href="/events" class="btn btn-outline">Upcoming Events</a>
+      <a href="{{ '/join' | relative_url }}" class="btn btn-primary">Become a Member</a>
+      <a href="{{ '/events' | relative_url }}" class="btn btn-outline">Upcoming Events</a>
     </div>
   </div>
 </div>

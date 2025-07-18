@@ -1,7 +1,7 @@
 title: SwissCHI Pathways
 description: SwissCHI Student Chapter - Pathways
 baseurl: ""
-url: ""
+url: "https://swisschi-pathways.org"
 
 # Build settings
 markdown: kramdown
