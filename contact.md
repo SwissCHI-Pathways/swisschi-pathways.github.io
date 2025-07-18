@@ -27,31 +27,13 @@ title: Contact Us
   <h2>Send Us a Message</h2>
   
   <div class="form-container">
-    <form id="contact-form" action="#" method="POST">
-      <div class="form-group">
-        <label for="name">Your Name *</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="email">Email Address *</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="subject">Subject *</label>
-        <input type="text" id="subject" name="subject" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="message">Message *</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-      </div>
-      
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Send Message</button>
-      </div>
-    </form>
+    <div class="google-form-wrapper">
+      <iframe id="contact-form" src="https://docs.google.com/forms/d/e/1FAIpQLScq5K0EJiPEFWGN9X6LArZhfeFXhOq2qMOl3wc9LwNuLRgG-A/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+    
+    <div class="form-alternative">
+      <p>Having trouble with the form? <a href="https://docs.google.com/forms/d/e/1FAIpQLScq5K0EJiPEFWGN9X6LArZhfeFXhOq2qMOl3wc9LwNuLRgG-A/viewform" target="_blank" class="btn btn-outline">Open in a new tab</a></p>
+    </div>
   </div>
 </div>
 
@@ -81,31 +63,63 @@ title: Contact Us
   
   .form-container {
     margin: 2rem 0;
-    max-width: 600px;
+    max-width: 700px;
   }
   
-  .form-group {
-    margin-bottom: 1.5rem;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 100%;
-    padding: 0.75rem;
+  .google-form-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-top: 90%; /* Aspect ratio for mobile */
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     border: 1px solid #e5e7eb;
-    border-radius: 4px;
-    font-family: inherit;
-    font-size: 1rem;
+    background-color: #f9fafb;
   }
   
-  textarea {
-    resize: vertical;
+  @media (min-width: 768px) {
+    .google-form-wrapper {
+      padding-top: 120%; /* Adjusted aspect ratio for desktop */
+    }
+  }
+  
+  #contact-form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  
+  .form-alternative {
+    margin-top: 1.5rem;
+    text-align: center;
+    padding: 1rem;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+  }
+  
+  .form-alternative p {
+    margin-bottom: 0;
+  }
+  
+  .form-alternative .btn {
+    margin-left: 0.5rem;
+    padding: 0.25rem 0.75rem;
   }
 </style>
+
+<script>
+  // Adjust iframe height based on content
+  window.addEventListener('message', function(e) {
+    var message = e.data;
+    if (typeof message !== 'object' || !message.hasOwnProperty('frameHeight')) return;
+    
+    var iframe = document.getElementById('contact-form');
+    if (iframe) {
+      var newHeight = Math.max(message.frameHeight + 30, 450) + 'px';
+      document.querySelector('.google-form-wrapper').style.height = newHeight;
+      document.querySelector('.google-form-wrapper').style.paddingTop = '0';
+    }
+  });
+</script>

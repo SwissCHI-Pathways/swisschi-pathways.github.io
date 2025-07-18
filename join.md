@@ -28,67 +28,76 @@ title: Join SwissCHI Pathways
   <p>Fill out the membership form below, and we'll get back to you with confirmation and next steps.</p>
   
   <div class="form-container">
-    <form id="membership-form" action="#" method="POST">
-      <div class="form-group">
-        <label for="name">Full Name *</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="email">Email Address *</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="institution">University/Institution *</label>
-        <input type="text" id="institution" name="institution" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="study-program">Study Program/Department *</label>
-        <input type="text" id="study-program" name="study-program" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="interest">Interest in HCI *</label>
-        <textarea id="interest" name="interest" rows="3" required></textarea>
-      </div>
-      
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Submit Application</button>
-      </div>
-    </form>
+    <div class="google-form-wrapper">
+      <iframe id="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSfA4APuBQFz3Py3uPP1jIGzFWrOGQJK1n31HbMSqJG-TOlKLQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+    
+    <div class="form-alternative">
+      <p>Having trouble with the form? <a href="https://docs.google.com/forms/d/e/1FAIpQLSfA4APuBQFz3Py3uPP1jIGzFWrOGQJK1n31HbMSqJG-TOlKLQ/viewform" target="_blank" class="btn btn-outline">Open in a new tab</a></p>
+    </div>
   </div>
 </div>
 
 <style>
   .form-container {
     margin: 2rem 0;
-    max-width: 600px;
+    max-width: 700px;
   }
   
-  .form-group {
-    margin-bottom: 1.5rem;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 100%;
-    padding: 0.75rem;
+  .google-form-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-top: 100%; /* Aspect ratio for mobile */
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     border: 1px solid #e5e7eb;
-    border-radius: 4px;
-    font-family: inherit;
-    font-size: 1rem;
+    background-color: #f9fafb;
   }
   
-  textarea {
-    resize: vertical;
+  @media (min-width: 768px) {
+    .google-form-wrapper {
+      padding-top: 150%; /* Taller aspect ratio for desktop */
+    }
+  }
+  
+  #google-form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  
+  .form-alternative {
+    margin-top: 1.5rem;
+    text-align: center;
+    padding: 1rem;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+  }
+  
+  .form-alternative p {
+    margin-bottom: 0;
+  }
+  
+  .form-alternative .btn {
+    margin-left: 0.5rem;
+    padding: 0.25rem 0.75rem;
   }
 </style>
+
+<script>
+  // Adjust iframe height based on content
+  window.addEventListener('message', function(e) {
+    var message = e.data;
+    if (typeof message !== 'object' || !message.hasOwnProperty('frameHeight')) return;
+    
+    var iframe = document.getElementById('google-form');
+    if (iframe) {
+      var newHeight = Math.max(message.frameHeight + 30, 500) + 'px';
+      document.querySelector('.google-form-wrapper').style.height = newHeight;
+      document.querySelector('.google-form-wrapper').style.paddingTop = '0';
+    }
+  });
+</script>
