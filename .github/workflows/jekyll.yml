@@ -35,7 +35,7 @@ jobs:
         env:
           JEKYLL_ENV: production
       - name: Test with HTMLProofer
-        run: bundle exec htmlproofer ./_site --disable-external --allow-hash-href --allow-missing-href --ignore-urls "/SwissCHI-Pathways/,/about,/events,/join,/contact/"
+        run: bundle exec htmlproofer ./_site --disable-external --allow-hash-href --allow-missing-href --url-ignore "/(\/SwissCHI-Pathways\/|\/about|\/events|\/join|\/contact)/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
