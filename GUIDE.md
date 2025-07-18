@@ -132,13 +132,13 @@ To change fonts:
 The site uses several button styles:
 ```html
 <!-- Primary (purple) button -->
-<a href="/join" class="btn btn-primary">Join Us</a>
+<a href="{{ '/join' | relative_url }}" class="btn btn-primary">Join Us</a>
 
 <!-- Secondary (red) button -->
-<a href="/events" class="btn btn-secondary">Upcoming Events</a>
+<a href="{{ '/events' | relative_url }}" class="btn btn-secondary">Upcoming Events</a>
 
 <!-- Outline button -->
-<a href="/about" class="btn btn-outline">Learn More</a>
+<a href="{{ '/about' | relative_url }}" class="btn btn-outline">Learn More</a>
 ```
 
 ### Cards
