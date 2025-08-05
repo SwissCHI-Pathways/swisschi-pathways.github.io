@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Our Team
+permalink: /team/
 ---
 
 <div class="container">
