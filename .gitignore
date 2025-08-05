@@ -19,3 +19,4 @@ Gemfile.lock
 
 # Claude assistant file
 CLAUDE.md
+.DS_Store
