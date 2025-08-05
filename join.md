@@ -29,11 +29,11 @@ title: Join SwissCHI Pathways
   
   <div class="form-container">
     <div class="google-form-wrapper">
-      <iframe id="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSfA4APuBQFz3Py3uPP1jIGzFWrOGQJK1n31HbMSqJG-TOlKLQ/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      <iframe id="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSekT5LS90RiTTOAxb_j2UWkH2AExUJYVlmh8DSiuE2HNKaZKg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     </div>
     
     <div class="form-alternative">
-      <p>Having trouble with the form? <a href="https://docs.google.com/forms/d/e/1FAIpQLSfA4APuBQFz3Py3uPP1jIGzFWrOGQJK1n31HbMSqJG-TOlKLQ/viewform" target="_blank" class="btn btn-outline">Open in a new tab</a></p>
+      <p>Having trouble with the form? <a href="https://docs.google.com/forms/d/e/1FAIpQLSekT5LS90RiTTOAxb_j2UWkH2AExUJYVlmh8DSiuE2HNKaZKg/viewform" target="_blank" class="btn btn-outline">Open in a new tab</a></p>
     </div>
   </div>
 </div>

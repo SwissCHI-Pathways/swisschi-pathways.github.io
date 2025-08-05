@@ -11,7 +11,7 @@ title: Contact Us
   <div class="contact-info">
     <div class="contact-method">
       <h3>Email</h3>
-      <p><a href="mailto:info@swisschi-pathways.ch">info@swisschi-pathways.ch</a></p>
+      <p><a href="mailto:swiss.pathways@gmail.com">swiss.pathways@gmail.com</a></p>
     </div>
     
     <div class="contact-method">
@@ -28,11 +28,11 @@ title: Contact Us
   
   <div class="form-container">
     <div class="google-form-wrapper">
-      <iframe id="contact-form" src="https://docs.google.com/forms/d/e/1FAIpQLScq5K0EJiPEFWGN9X6LArZhfeFXhOq2qMOl3wc9LwNuLRgG-A/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      <iframe id="contact-form" src="https://docs.google.com/forms/d/e/1FAIpQLSeiUVy4RcPbxBUmvuhuQPrkMgNSr21mwisPnMpQcfF81wU0cg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     </div>
-    
+
     <div class="form-alternative">
-      <p>Having trouble with the form? <a href="https://docs.google.com/forms/d/e/1FAIpQLScq5K0EJiPEFWGN9X6LArZhfeFXhOq2qMOl3wc9LwNuLRgG-A/viewform" target="_blank" class="btn btn-outline">Open in a new tab</a></p>
+      <p>Having trouble with the form? <a href="https://docs.google.com/forms/d/e/1FAIpQLSeiUVy4RcPbxBUmvuhuQPrkMgNSr21mwisPnMpQcfF81wU0cg/viewform" target="_blank" class="btn btn-outline">Open in a new tab</a></p>
     </div>
   </div>
 </div>
