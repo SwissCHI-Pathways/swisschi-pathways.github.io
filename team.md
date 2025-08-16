@@ -81,7 +81,7 @@ permalink: /team/
         <div class="member-info">
           <h3>Seyed Parsa Neshaei</h3>
           <p class="member-affiliation">Ecole Polytechnique Fédérale de Lausanne (EPFL), Lausanne</p>
-          <p class="member-bio">TBD</p>
+          <p class="member-bio">Parsa has been a PhD student at EPFL since September 2023. His work focuses on metacognition, with a focus on how AI can support learners in reflecting more deeply and personally.</p>
           <div class="member-links">
             <a href="mailto:seyed.neshaei@epfl.ch" class="social-link" title="Email">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
