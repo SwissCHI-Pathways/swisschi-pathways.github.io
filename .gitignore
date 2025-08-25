@@ -20,3 +20,5 @@ Gemfile.lock
 # Claude assistant file
 CLAUDE.md
 .DS_Store
+CONTENT_PLAN.md
+STYLE_GUIDE.md
