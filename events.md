@@ -10,7 +10,7 @@ title: Events
   </div>
   
   <div class="events-list">
-    <div class="event-card">
+    <!-- <div class="event-card">
       <div class="event-date-badge">
         <span class="month">SEP</span>
         <span class="day">15</span>
@@ -37,7 +37,6 @@ title: Events
         <a href="#" class="btn btn-primary">Register</a>
       </div>
     </div>
-    
     <div class="event-card">
       <div class="event-date-badge">
         <span class="month">OCT</span>
@@ -65,7 +64,6 @@ title: Events
         <a href="#" class="btn btn-primary">Register</a>
       </div>
     </div>
-    
     <div class="event-card">
       <div class="event-date-badge">
         <span class="month">NOV</span>
@@ -92,7 +90,7 @@ title: Events
         </div>
         <a href="#" class="btn btn-primary">Register</a>
       </div>
-    </div>
+    </div> -->
   </div>
   
   <h2>Past Events</h2>
