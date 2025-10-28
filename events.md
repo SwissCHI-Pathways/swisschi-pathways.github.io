@@ -169,11 +169,8 @@ title: Events
 
   <div class="subscribe-events mt-3">
     <h3>Stay Updated</h3>
-    <p>Don't miss out on our upcoming events. Subscribe to our newsletter to receive event announcements directly in your inbox.</p>
-    <form class="subscribe-form">
-      <input type="email" placeholder="Your email address" required>
-      <button type="submit" class="btn btn-secondary">Subscribe</button>
-    </form>
+    <p>Don't miss out on our upcoming events. Get in touch with us to stay informed about SwissCHI Pathways activities.</p>
+    <a href="{{ '/contact' | relative_url }}" class="btn btn-primary">Contact Us</a>
   </div>
 </div>
 
@@ -413,20 +410,20 @@ title: Events
     padding: 2rem;
     border-radius: 12px;
     margin-top: 3rem;
+    text-align: center;
   }
-  
-  .subscribe-form {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
+
+  .subscribe-events h3 {
+    margin-bottom: 0.75rem;
   }
-  
-  .subscribe-form input {
-    flex: 1;
-    padding: 0.75rem 1rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 30px;
-    font-size: 1rem;
+
+  .subscribe-events p {
+    margin-bottom: 1.5rem;
+    color: #4b5563;
+  }
+
+  .subscribe-events .btn {
+    display: inline-block;
   }
   
   @media (max-width: 640px) {
@@ -445,10 +442,6 @@ title: Events
     .event-date-badge .year {
       font-size: 1rem;
       margin: 0;
-    }
-    
-    .subscribe-form {
-      flex-direction: column;
     }
   }
   
