@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Sponsors
+permalink: /sponsors/
 ---
 
 <div class="container">
