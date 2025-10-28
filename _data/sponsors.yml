@@ -1,0 +1,22 @@
+# Sponsors organized by event
+# Use event slugs as keys (e.g., cozy-research-2025, summer-workshop-2024)
+
+cozy-research-2025:
+  name: "SwissCHI Pathways Cozy Research"
+  date: "2025-11-28"
+  sponsors:
+    - name: "Adobe"
+      logo: "adobe.svg"
+      website: "https://careers.adobe.com/us/en"
+      tier: "gold"  # gold, silver, bronze, or partner
+      description: "Supporting SwissCHI Pathways events"
+
+# Example of a past event with sponsors
+# summer-workshop-2024:
+#   name: "Summer HCI Workshop"
+#   date: "2024-06-15"
+#   sponsors:
+#     - name: "Past Sponsor"
+#       logo: "past-sponsor.svg"
+#       website: "https://example.com"
+#       tier: "silver"

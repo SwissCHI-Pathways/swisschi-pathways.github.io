@@ -17,9 +17,7 @@ title: Contact Us
     <div class="contact-method">
       <h3>Social Media</h3>
       <ul class="social-links">
-        <li><a href="#" target="_blank">Twitter</a></li>
         <li><a href="#" target="_blank">LinkedIn</a></li>
-        <li><a href="#" target="_blank">Instagram</a></li>
       </ul>
     </div>
   </div>

@@ -1,0 +1,59 @@
+# Events for SwissCHI Pathways
+# Each event should have a unique slug that matches the sponsor key if it has sponsors
+
+- slug: "cozy-research-2025"
+  title: "SwissCHI Pathways Cozy Research"
+  subtitle: "Exploring a softer kind of inquiry"
+  description: "A meet-up for BSc, MSc, and PhD students to share skills, spark strange ideas, and imagine research that warms, comforts, and connects. And to enjoy together the glowing lights and the cinnamon air of the Bern winter market."
+  date: "2025-11-28"
+  time: "11:00 - 18:00"
+  location: "Bern, BFH Marzili Campus"
+  registration_url: "https://forms.gle/dAUbAaQ1BqLZHrjcA"
+  schedule:
+    - time: "11:00–11:15"
+      title: "Arrival & Welcome"
+      description: "Check-in & Coffee: Tea and coffees, name tags"
+    - time: "11:15–12:15"
+      title: "Guest Talk"
+      is_featured: true
+      speaker:
+        name: "Doga Dogan, PhD"
+        title: "Research Scientist"
+        organization: "Adobe Basel"
+        linkedin: "https://www.linkedin.com/in/dogadogan/"
+        email: "doga@adobe.com"
+      details:
+        - "Q&A Session (15–20 min)"
+    - time: "12:15–13:45"
+      title: "Skill-Sharing & Networking Lunch"
+      description: "<em>Activity Setup:</em> Each participant fills out a card with:"
+      list:
+        - "What I do (research area)"
+        - "What I am good at (skills)"
+        - "What I need (collaboration, mentorship, tools)"
+      details:
+        - "Cards are color-coded or grouped by themes. Lunch Bag provided."
+    - time: "13:45–15:45"
+      title: "Cozy Research Challenge"
+      description: "<em>Group Formation:</em> Groups of 3-4 people."
+      details:
+        - "<em>Challenge Brief:</em> Each group receives a set of \"cozy prompt cards\" (e.g., tech that hugs back, HCI for tea drinkers…)."
+        - "<em>Task:</em> Come up with a wildly cozy HCI research idea, sketch it out, and prepare a poster."
+        - "<em>Mini Presentations (15:15–15:45):</em> Who wants can share their idea with the room."
+    - time: "16:00–..."
+      title: "Winter Market Visit"
+      description: "Walk to Bern Christmas Markets: Group stroll"
+
+# Example of a past event (commented out)
+# - slug: "launch-event-2024"
+#   title: "SwissCHI Pathways Launch Event"
+#   subtitle: "Building our HCI community"
+#   description: "Join us for the inaugural SwissCHI Pathways event..."
+#   date: "2024-06-15"
+#   time: "14:00 - 17:00"
+#   location: "Zurich, ETH Main Building"
+#   registration_url: ""
+#   schedule:
+#     - time: "14:00–14:30"
+#       title: "Welcome & Introduction"
+#       description: "Meet the organizers and learn about SwissCHI Pathways"
