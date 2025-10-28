@@ -17,7 +17,7 @@ title: Contact Us
     <div class="contact-method">
       <h3>Social Media</h3>
       <ul class="social-links">
-        <li><a href="#" target="_blank">LinkedIn</a></li>
+        <li><a href="https://www.linkedin.com/company/swisschi-pathways/" target="_blank">LinkedIn</a></li>
       </ul>
     </div>
   </div>
