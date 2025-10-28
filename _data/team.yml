@@ -1,0 +1,52 @@
+# Team members for SwissCHI Pathways
+# Organized by role/section
+
+board_members:
+  - name: "Francesco Bombassei De Bona"
+    affiliation: "Università della Svizzera italiana (USI), Lugano"
+    photo: "francesco.jpeg"
+    bio: "Francesco has been a PhD student at USI since August 2024. His work focuses on developing innovative affective computing AI techniques for wearable devices, with focus on eXplainable AI (XAI)."
+    email: "bombafr@usi.ch"
+    linkedin: "https://www.linkedin.com/in/frabomba6/"
+    scholar: "https://scholar.google.com/citations?user=vCqZb34AAAAJ"
+
+  - name: "Irene Zanardi"
+    affiliation: "Università della Svizzera italiana (USI), Lugano"
+    photo: "irene.png"
+    bio: "Irene has been a PhD student at USI since May 2022. Her work focuses on understanding how we can use Generative AI as an environment for reflection on gender stereotypes and biases with children."
+    email: "irene.zanardi@usi.ch"
+    linkedin: "https://www.linkedin.com/in/irenezanardi/"
+    scholar: "https://scholar.google.com/citations?user=kQNcBCoAAAAJ"
+
+  - name: "Seyed Parsa Neshaei"
+    affiliation: "Ecole Polytechnique Fédérale de Lausanne (EPFL), Lausanne"
+    photo: "parsa.jpeg"
+    bio: "Parsa has been a PhD student at EPFL since September 2023. His work focuses on metacognition, with a focus on how AI can support learners in reflecting more deeply and personally."
+    email: "seyed.neshaei@epfl.ch"
+    linkedin: "https://www.linkedin.com/in/spneshaei/"
+    scholar: "https://scholar.google.com/citations?user=hZFxf-kAAAAJ"
+
+  - name: "Léane Wettstein"
+    affiliation: "Berner Fachhochschule (BFH), Bern<br>Universität St. Gallen (HSG), St. Gallen"
+    photo: "leane.jpg"
+    bio: "Léane has been a PhD student since September 2024. Her work focuses on understanding user's perception of trust and adoption of AI-based learning systems."
+    email: "leane.wettstein@bfh.ch"
+    linkedin: "https://www.linkedin.com/in/leane-wettstein/"
+    scholar: "https://scholar.google.com/citations?user=lUyFmKQAAAAJ"
+
+  - name: "Shana Dedò"
+    affiliation: "Università della Svizzera italiana (USI), Lugano"
+    photo: "shana.jpg"
+    bio: "Shana has been a researcher at USI since November 2024. Her work focuses on exploring how social robots can foster inclusive Learning-by-Teaching experiences that promote soft skills and self-awareness."
+    email: "shana.dedo@usi.ch"
+    linkedin: "https://www.linkedin.com/in/shana-dedo/"
+    scholar: "https://scholar.google.com/citations?user=MsB0F7UAAAAJ"
+
+# Advisory board (commented out as it's not currently used)
+# advisory_board:
+#   - category: "Faculty Advisors"
+#     description: "We work closely with HCI faculty members from Swiss universities to ensure our activities align with academic excellence and research opportunities."
+#   - category: "Industry Mentors"
+#     description: "Experienced professionals from the Swiss tech industry provide guidance on career development and real-world applications of HCI principles."
+#   - category: "SwissCHI Representatives"
+#     description: "Direct connection to the Swiss Computer-Human Interaction Association ensures alignment with the broader HCI community in Switzerland."

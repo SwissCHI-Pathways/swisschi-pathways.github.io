@@ -12,126 +12,44 @@ permalink: /team/
   <div class="team-section">
     <h2>Board Members</h2>
     <div class="team-grid">
+      {% for member in site.data.team.board_members %}
       <div class="team-member">
         <div class="member-photo">
           <div class="photo-placeholder">
-            <img src="{{ '/assets/images/team/francesco.jpeg' | relative_url }}" alt="Francesco Bombassei De Bona" width="100" height="100">
+            <img src="{{ '/assets/images/team/' | append: member.photo | relative_url }}" alt="{{ member.name }}" width="100" height="100">
           </div>
         </div>
         <div class="member-info">
-          <h3>Francesco Bombassei De Bona</h3>
-          <p class="member-affiliation">Università della Svizzera italiana (USI), Lugano</p>
-          <p class="member-bio">Francesco has been a PhD student at USI since August 2024. His work focuses on developing innovative affective computing AI techniques for wearable devices, with focus on eXplainable AI (XAI).</p>
+          <h3>{{ member.name }}</h3>
+          <p class="member-affiliation">{{ member.affiliation }}</p>
+          <p class="member-bio">{{ member.bio }}</p>
           <div class="member-links">
-            <a href="mailto:bombafr@usi.ch" class="social-link" title="Email">
+            {% if member.email %}
+            <a href="mailto:{{ member.email }}" class="social-link" title="Email">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
               </svg>
             </a>
-            <a href="https://www.linkedin.com/in/frabomba6/" class="social-link" title="LinkedIn">
+            {% endif %}
+            {% if member.linkedin %}
+            <a href="{{ member.linkedin }}" class="social-link" title="LinkedIn">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
               </svg>
             </a>
-            <a href="https://scholar.google.com/citations?user=vCqZb34AAAAJ" class="social-link" title="Google Scholar">
+            {% endif %}
+            {% if member.scholar %}
+            <a href="{{ member.scholar }}" class="social-link" title="Google Scholar">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M5.242 13.769L0.5 9.5 12 1l11.5 8.5-4.742 4.269C17.548 12.179 14.992 11.5 12 11.5s-5.548.679-6.758 2.269z"/>
                 <path d="M12 15.5c-1.933 0-3.5 1.567-3.5 3.5s1.567 3.5 3.5 3.5 3.5-1.567 3.5-3.5-1.567-3.5-3.5-3.5z"/>
               </svg>
             </a>
+            {% endif %}
           </div>
         </div>
       </div>
-      <div class="team-member">
-        <div class="member-photo">
-          <div class="photo-placeholder">
-            <img src="{{ '/assets/images/team/irene.png' | relative_url }}" alt="Irene Zanardi" width="100" height="100">
-          </div>
-        </div>
-        <div class="member-info">
-          <h3>Irene Zanardi</h3>
-          <p class="member-affiliation">Università della Svizzera italiana (USI), Lugano</p>
-          <p class="member-bio">Irene has been a PhD student at USI since May 2022. Her work focuses on understanding how we can use Generative AI as an environment for reflection on gender stereotypes and biases with children.</p>
-          <div class="member-links">
-            <a href="mailto:irene.zanardi@usi.ch" class="social-link" title="Email">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-              </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/irenezanardi/" class="social-link" title="LinkedIn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-            </a>
-            <a href="https://scholar.google.com/citations?user=kQNcBCoAAAAJ" class="social-link" title="Google Scholar">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M5.242 13.769L0.5 9.5 12 1l11.5 8.5-4.742 4.269C17.548 12.179 14.992 11.5 12 11.5s-5.548.679-6.758 2.269z"/>
-                <path d="M12 15.5c-1.933 0-3.5 1.567-3.5 3.5s1.567 3.5 3.5 3.5 3.5-1.567 3.5-3.5-1.567-3.5-3.5-3.5z"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="team-member">
-        <div class="member-photo">
-          <div class="photo-placeholder">
-            <img src="{{ '/assets/images/team/parsa.jpeg' | relative_url }}" alt="Seyed Parsa Neshaei" width="100" height="100">
-          </div>
-        </div>
-        <div class="member-info">
-          <h3>Seyed Parsa Neshaei</h3>
-          <p class="member-affiliation">Ecole Polytechnique Fédérale de Lausanne (EPFL), Lausanne</p>
-          <p class="member-bio">Parsa has been a PhD student at EPFL since September 2023. His work focuses on metacognition, with a focus on how AI can support learners in reflecting more deeply and personally.</p>
-          <div class="member-links">
-            <a href="mailto:seyed.neshaei@epfl.ch" class="social-link" title="Email">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-              </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/spneshaei/" class="social-link" title="LinkedIn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-            </a>
-            <a href="https://scholar.google.com/citations?user=hZFxf-kAAAAJ" class="social-link" title="Google Scholar">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M5.242 13.769L0.5 9.5 12 1l11.5 8.5-4.742 4.269C17.548 12.179 14.992 11.5 12 11.5s-5.548.679-6.758 2.269z"/>
-                <path d="M12 15.5c-1.933 0-3.5 1.567-3.5 3.5s1.567 3.5 3.5 3.5 3.5-1.567 3.5-3.5-1.567-3.5-3.5-3.5z"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="team-member">
-        <div class="member-photo">
-          <div class="photo-placeholder">
-            <img src="{{ '/assets/images/team/leane.jpg' | relative_url }}" alt="Léane Wettstein" width="100" height="100">
-          </div>
-        </div>
-        <div class="member-info">
-          <h3>Léane Wettstein</h3>
-          <p class="member-affiliation">Berner Fachhochschule (BFH), Bern<br>Universität St. Gallen (HSG), St. Gallen</p>
-          <p class="member-bio">Léane has been a PhD student since September 2024. Her work focuses on understanding user’s perception of trust and adoption of AI-based learning systems.</p>
-          <div class="member-links">
-            <a href="mailto:leane.wettstein@bfh.ch" class="social-link" title="Email">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-              </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/leane-wettstein/" class="social-link" title="LinkedIn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-            </a>
-            <a href="https://scholar.google.com/citations?user=lUyFmKQAAAAJ" class="social-link" title="Google Scholar">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M5.242 13.769L0.5 9.5 12 1l11.5 8.5-4.742 4.269C17.548 12.179 14.992 11.5 12 11.5s-5.548.679-6.758 2.269z"/>
-                <path d="M12 15.5c-1.933 0-3.5 1.567-3.5 3.5s1.567 3.5 3.5 3.5 3.5-1.567 3.5-3.5-1.567-3.5-3.5-3.5z"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
   
