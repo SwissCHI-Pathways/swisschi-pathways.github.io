@@ -61,27 +61,64 @@ title: Events
               <strong>{{ item.time }} | {{ item.title }}</strong>
 
               {% if item.speaker %}
-              <div class="speaker-info">
-                <div class="speaker-details">
-                  <span class="speaker-name">{{ item.speaker.name }}</span>
-                  <span class="speaker-position">{{ item.speaker.title }} @ {{ item.speaker.organization }}</span>
-                </div>
-                <div class="speaker-links">
-                  {% if item.speaker.linkedin %}
-                  <a href="{{ item.speaker.linkedin }}" target="_blank" rel="noopener noreferrer" class="speaker-link" title="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-                      <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
-                    </svg>
-                  </a>
+              <div class="speaker-section">
+                <div class="speaker-header">
+                  {% if item.speaker.photo %}
+                  <div class="speaker-photo">
+                    <img src="{{ '/assets/images/speakers/' | append: item.speaker.photo | relative_url }}" alt="{{ item.speaker.name }}" />
+                  </div>
                   {% endif %}
-                  {% if item.speaker.email %}
-                  <a href="mailto:{{ item.speaker.email }}" class="speaker-link" title="Email">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-                      <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
-                    </svg>
-                  </a>
-                  {% endif %}
+                  <div class="speaker-info-wrapper">
+                    <div class="speaker-details">
+                      <span class="speaker-name">{{ item.speaker.name }}</span>
+                      <span class="speaker-position">{{ item.speaker.position }} @ {{ item.speaker.organization }}</span>
+                    </div>
+                    <div class="speaker-links">
+                    {% if item.speaker.website %}
+                    <a href="{{ item.speaker.website }}" target="_blank" rel="noopener noreferrer" class="speaker-link" title="Website">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+                        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>
+                      </svg>
+                    </a>
+                    {% endif %}
+                    {% if item.speaker.linkedin %}
+                    <a href="{{ item.speaker.linkedin }}" target="_blank" rel="noopener noreferrer" class="speaker-link" title="LinkedIn">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                      </svg>
+                    </a>
+                    {% endif %}
+                    {% if item.speaker.email %}
+                    <a href="mailto:{{ item.speaker.email }}" class="speaker-link" title="Email">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                      </svg>
+                    </a>
+                    {% endif %}
+                    </div>
+                  </div>
                 </div>
+
+                {% if item.speaker.talk_title %}
+                <div class="talk-title">
+                  <h5>{{ item.speaker.talk_title }}</h5>
+                </div>
+                {% endif %}
+
+                {% if item.speaker.abstract %}
+                <div class="speaker-abstract">
+                  <h6>Abstract</h6>
+                  <p>{{ item.speaker.abstract }}</p>
+                </div>
+                {% endif %}
+
+                {% if item.speaker.bio %}
+                <div class="speaker-bio">
+                  <h6>About the Speaker</h6>
+                  <p>{{ item.speaker.bio }}</p>
+                </div>
+                {% endif %}
               </div>
               {% endif %}
 
@@ -319,16 +356,40 @@ title: Events
     font-size: 1.1rem;
   }
 
-  /* Speaker Info */
-  .speaker-info {
+  /* Speaker Section */
+  .speaker-section {
+    margin: 1.5rem 0;
+  }
+
+  .speaker-header {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+  }
+
+  .speaker-photo {
+    flex-shrink: 0;
+  }
+
+  .speaker-photo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #3C2FB3;
+  }
+
+  .speaker-info-wrapper {
+    flex: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1rem 0;
-    padding: 1rem;
-    background-color: white;
-    border-radius: 6px;
-    border: 1px solid #e5e7eb;
+    gap: 1rem;
   }
 
   .speaker-details {
@@ -376,16 +437,95 @@ title: Events
     display: block;
   }
 
+  /* Talk Title */
+  .talk-title {
+    margin: 1.25rem 0;
+    padding-left: 0.5rem;
+    border-left: 3px solid #3C2FB3;
+  }
+
+  .talk-title h5 {
+    margin: 0;
+    color: #1f2937;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  /* Speaker Abstract */
+  .speaker-abstract {
+    margin: 1.25rem 0;
+    padding: 1rem;
+    background-color: rgba(60, 47, 179, 0.03);
+    border-radius: 6px;
+  }
+
+  .speaker-abstract h6 {
+    margin: 0 0 0.75rem 0;
+    color: #3C2FB3;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .speaker-abstract p {
+    margin: 0;
+    color: #374151;
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+
+  /* Speaker Bio */
+  .speaker-bio {
+    margin: 1.25rem 0;
+    padding: 1rem;
+    background-color: #f9fafb;
+    border-radius: 6px;
+  }
+
+  .speaker-bio h6 {
+    margin: 0 0 0.75rem 0;
+    color: #3C2FB3;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .speaker-bio p {
+    margin: 0;
+    color: #4b5563;
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+
   @media (max-width: 640px) {
-    .speaker-info {
+    .speaker-header {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      text-align: center;
       gap: 1rem;
+    }
+
+    .speaker-info-wrapper {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .speaker-photo img {
+      width: 80px;
+      height: 80px;
     }
 
     .schedule-item-featured {
       margin-left: 0;
       margin-right: 0;
+    }
+
+    .talk-title h5 {
+      font-size: 1rem;
     }
   }
 

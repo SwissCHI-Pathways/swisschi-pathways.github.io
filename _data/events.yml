@@ -18,12 +18,17 @@
       is_featured: true
       speaker:
         name: "Doga Dogan, PhD"
-        title: "Research Scientist"
+        photo: "doga.jpeg"  # Photo file in assets/images/speakers/
+        position: "Research Scientist"
         organization: "Adobe Basel"
+        talk_title: "Ubiquitous Intelligence: Context-Aware Interaction across Physical and Digital Worlds"
+        abstract: "This talk explores how to design intelligent systems that are aware of their physical, creative, and computational context. I will present research on making everyday objects \"legible\" to computation, from InfraredTags and XR-Objects for seamless recognition and interaction, to SensiCut, which uses computer vision and AI to identify materials during fabrication. I will then shift to creativity support, showing how multi-agent AI frameworks like Adobe's Project Get Savvy can adapt to user intent and collaborative design scenarios. Finally, I will discuss ongoing work on \"Generative Engine Optimization\" in Adobe LLM Optimizer, which boosts the visibility of digital content in user-facing generative models. Together, these projects outline a vision of ubiquitous intelligence: interactive systems that respond to context across the physical and digital, while leveraging multi-agent AI and generative models to act as adaptive collaborators."
+        bio: "I am a research scientist at Adobe Research. I am based in Basel, Switzerland, and work as part of the AI Experiences Lab. I received my PhD in Electrical Engineering and Computer Science from MIT, where I worked with Prof. Stefanie Mueller in the Computer Science & Artificial Intelligence Laboratory (CSAIL). My research interests span two areas: 1) Embedding information, intelligence, & interaction into everyday objects 2) GenAI for developing human-centered creativity support tools & experiences. I regularly collaborate with interdisciplinary teams and present my findings at major CS and human-computer interaction (HCI) conferences."
+        website: "https://www.dogadogan.com/"
         linkedin: "https://www.linkedin.com/in/dogadogan/"
         email: "doga@adobe.com"
       details:
-        - "Q&A Session (15–20 min)"
+        - "Q&A Session (20 min)"
     - time: "12:15–13:45"
       title: "Skill-Sharing & Networking Lunch"
       description: "<em>Activity Setup:</em> Each participant fills out a card with:"
