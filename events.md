@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Events
+description: "Join SwissCHI Pathways workshops, lectures, and networking events for HCI students in Switzerland."
 ---
 
 <div class="container">
@@ -22,6 +23,30 @@ title: Events
 
     {% if upcoming_events.size > 0 %}
       {% for event in upcoming_events %}
+      <!-- Event Schema.org structured data -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "{{ event.title }}",
+        "description": "{{ event.description | strip_html | escape }}",
+        "startDate": "{{ event.date }}T{{ event.time | split: ' - ' | first | replace: ':', '' | slice: 0, 2 }}:{{ event.time | split: ' - ' | first | slice: 3, 2 }}:00",
+        "location": {
+          "@type": "Place",
+          "name": "{{ event.location }}",
+          "address": "{{ event.location }}"
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "SwissCHI Pathways",
+          "url": "{{ site.url }}"
+        }
+        {% if event.registration_url %}
+        ,"eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled"
+        {% endif %}
+      }
+      </script>
       <div class="event-card">
         <div class="event-date-badge">
           <span class="month">{{ event.date | date: "%b" | upcase }}</span>
@@ -145,7 +170,7 @@ title: Events
           <div class="event-details">
             {% if event.location %}
             <div class="event-detail">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
                 <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
               </svg>
               <span>{{ event.location }}</span>
@@ -153,7 +178,7 @@ title: Events
             {% endif %}
             {% if event.time %}
             <div class="event-detail">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
                 <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
                 <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
               </svg>
@@ -168,7 +193,17 @@ title: Events
       </div>
       {% endfor %}
     {% else %}
-      <p>No upcoming events at the moment. Check back soon!</p>
+      <div class="coming-soon-card">
+        <div class="coming-soon-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+            <path d="M8 7.5a.5.5 0 0 0-1 0V9H5.5a.5.5 0 0 0 0 1H7v1.5a.5.5 0 0 0 1 0V10h1.5a.5.5 0 0 0 0-1H8V7.5z"/>
+          </svg>
+        </div>
+        <h3>We're brewing up new events!</h3>
+        <p>Check back soon or get in touch to stay updated on upcoming SwissCHI Pathways activities.</p>
+        <a href="{{ '/contact' | relative_url }}" class="btn btn-primary">Contact Us</a>
+      </div>
     {% endif %}
   </div>
 
@@ -197,6 +232,47 @@ title: Events
       {% if event.location %}
       <p class="past-event-location">📍 {{ event.location }}</p>
       {% endif %}
+
+      {% comment %} Speakers from schedule {% endcomment %}
+      {% assign speakers = "" | split: "" %}
+      {% for item in event.schedule %}
+        {% if item.speaker %}
+          {% assign speakers = speakers | push: item.speaker %}
+        {% endif %}
+      {% endfor %}
+      {% if speakers.size > 0 %}
+      <div class="past-event-speakers">
+        <span class="past-event-label">Featured speaker{% if speakers.size > 1 %}s{% endif %}:</span>
+        <div class="past-speakers-list">
+          {% for speaker in speakers %}
+          <div class="past-speaker">
+            {% if speaker.photo %}
+            <img src="{{ '/assets/images/speakers/' | append: speaker.photo | relative_url }}" alt="{{ speaker.name }}" class="past-speaker-photo">
+            {% endif %}
+            <div class="past-speaker-info">
+              <span class="past-speaker-name">{{ speaker.name }}</span>
+              <span class="past-speaker-role">{{ speaker.position }}, {{ speaker.organization }}</span>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% comment %} Sponsors {% endcomment %}
+      {% assign event_sponsors = site.data.sponsors[event.slug] %}
+      {% if event_sponsors and event_sponsors.sponsors.size > 0 %}
+      <div class="past-event-sponsors">
+        <span class="past-event-label">Sponsored by:</span>
+        <div class="past-sponsors-list">
+          {% for sponsor in event_sponsors.sponsors %}
+          <a href="{{ sponsor.website }}" target="_blank" rel="noopener noreferrer" class="past-sponsor-link" title="{{ sponsor.name }}">
+            <img src="{{ '/assets/images/sponsors/' | append: sponsor.logo | relative_url }}" alt="{{ sponsor.name }}" class="past-sponsor-logo">
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
     </div>
     {% endfor %}
   </div>
@@ -208,6 +284,7 @@ title: Events
     <h3>Stay Updated</h3>
     <p>Don't miss out on our upcoming events. Get in touch with us to stay informed about SwissCHI Pathways activities.</p>
     <a href="{{ '/contact' | relative_url }}" class="btn btn-primary">Contact Us</a>
+    <a href="{{ '/team' | relative_url }}" class="btn btn-outline">Meet the Organizers</a>
   </div>
 </div>
 
@@ -693,10 +770,140 @@ title: Events
     margin-top: 0.5rem;
   }
 
+  /* Past Event Speakers */
+  .past-event-speakers {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .past-event-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+  }
+
+  .past-speakers-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .past-speaker {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .past-speaker-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #3C2FB3;
+  }
+
+  .past-speaker-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .past-speaker-name {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 0.95rem;
+  }
+
+  .past-speaker-role {
+    color: #6b7280;
+    font-size: 0.85rem;
+  }
+
+  /* Past Event Sponsors */
+  .past-event-sponsors {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .past-sponsors-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .past-sponsor-link {
+    display: inline-block;
+    transition: opacity 0.3s ease;
+  }
+
+  .past-sponsor-link:hover {
+    opacity: 0.7;
+  }
+
+  .past-sponsor-logo {
+    height: 28px;
+    width: auto;
+    max-width: 100px;
+    object-fit: contain;
+  }
+
   @media (max-width: 640px) {
     .past-event-header {
       flex-direction: column;
       align-items: flex-start;
+    }
+
+    .past-speaker-photo {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  /* Coming Soon Card Styles */
+  .coming-soon-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 2rem;
+    border: 2px dashed #d1d5db;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f8f6ff 0%, #f3f4f6 100%);
+  }
+
+  .coming-soon-icon {
+    color: #3C2FB3;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+  }
+
+  .coming-soon-card h3 {
+    color: #3C2FB3;
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+  }
+
+  .coming-soon-card p {
+    color: #4b5563;
+    max-width: 400px;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 640px) {
+    .coming-soon-card {
+      padding: 2rem 1.5rem;
+    }
+
+    .coming-soon-card h3 {
+      font-size: 1.25rem;
     }
   }
 </style>

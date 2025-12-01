@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/images/favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/assets/images/favicon/favicon.svg" />
@@ -12,16 +12,51 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-title" content="Pathways" />
   <link rel="manifest" href="/assets/images/favicon/site.webmanifest" />
-  
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
+
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   {% seo %}
+
+  <!-- Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SwissCHI Pathways",
+    "url": "{{ site.url }}",
+    "logo": "{{ site.url }}/assets/images/PatwaysLogo_Symbol_Purple.svg",
+    "description": "{{ site.description }}"
+  }
+  </script>
+
+  <!-- Skip Link Styles -->
+  <style>
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #3C2FB3;
+      color: white;
+      padding: 8px 16px;
+      z-index: 100;
+      text-decoration: none;
+      border-radius: 0 0 4px 0;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+  </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <header class="site-header">
     {% include header.html %}
   </header>
 
-  <main class="site-content">
+  <main id="main-content" class="site-content">
     {{ content }}
   </main>
 

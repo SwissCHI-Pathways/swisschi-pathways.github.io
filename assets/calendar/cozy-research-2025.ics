@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SwissCHI Pathways//Events//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+DTSTART:20251128T110000
+DTEND:20251128T180000
+DTSTAMP:20251128T000000Z
+UID:cozy-research-2025@swisschi-pathways.github.io
+SUMMARY:SwissCHI Pathways Cozy Research
+DESCRIPTION:A meet-up for BSc\, MSc\, and PhD students to share skills\, spark strange ideas\, and imagine research that warms\, comforts\, and connects. And to enjoy together the glowing lights and the cinnamon air of the Bern winter market.
+LOCATION:Bern\, BFH Marzili Campus
+URL:https://swisschi-pathways.github.io/events/
+ORGANIZER;CN=SwissCHI Pathways:mailto:bombafr@usi.ch
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

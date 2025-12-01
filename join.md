@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Join SwissCHI Pathways
+description: "Join SwissCHI Pathways and connect with HCI students, attend events, and grow your network in Switzerland."
 ---
 
 <div class="container">
@@ -9,7 +10,7 @@ title: Join SwissCHI Pathways
   <p>We're excited that you're interested in joining the SwissCHI Pathways community! As a member, you'll have access to networking opportunities, events, resources, and a community of like-minded students and researchers in the field of Human-Computer Interaction.</p>
   
   <h2>Membership Benefits</h2>
-  
+
   <ul>
     <li>Access to all SwissCHI Pathways events and workshops</li>
     <li>Networking opportunities with HCI students across Switzerland</li>
@@ -18,6 +19,8 @@ title: Join SwissCHI Pathways
     <li>Mentorship from experienced HCI professionals</li>
     <li>Discounted entry to SwissCHI events</li>
   </ul>
+
+  <p><a href="{{ '/events' | relative_url }}">See our upcoming events</a> to get a taste of what we organize.</p>
   
   <h2>Eligibility</h2>
   
@@ -29,7 +32,7 @@ title: Join SwissCHI Pathways
   
   <div class="form-container">
     <div class="google-form-wrapper">
-      <iframe id="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSekT5LS90RiTTOAxb_j2UWkH2AExUJYVlmh8DSiuE2HNKaZKg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      <iframe id="google-form" src="https://docs.google.com/forms/d/e/1FAIpQLSekT5LS90RiTTOAxb_j2UWkH2AExUJYVlmh8DSiuE2HNKaZKg/viewform?embedded=true" title="SwissCHI Pathways membership signup form" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     </div>
     
     <div class="form-alternative">

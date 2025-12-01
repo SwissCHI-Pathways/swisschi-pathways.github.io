@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Sponsors
+description: "Partner with SwissCHI Pathways to support the next generation of HCI professionals in Switzerland."
 permalink: /sponsors/
 ---
 

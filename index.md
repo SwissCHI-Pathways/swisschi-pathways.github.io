@@ -1,6 +1,7 @@
 ---
 layout: home
 title: SwissCHI Pathways
+description: "SwissCHI Pathways connects HCI students across Switzerland through workshops, networking, and community events."
 ---
 
 <div class="home-logo-container">

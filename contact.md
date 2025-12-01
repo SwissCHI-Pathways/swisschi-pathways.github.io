@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Contact Us
+description: "Get in touch with SwissCHI Pathways. We'd love to hear from students, researchers, and sponsors."
 ---
 
 <div class="container">
@@ -26,7 +27,7 @@ title: Contact Us
   
   <div class="form-container">
     <div class="google-form-wrapper">
-      <iframe id="contact-form" src="https://docs.google.com/forms/d/e/1FAIpQLSeiUVy4RcPbxBUmvuhuQPrkMgNSr21mwisPnMpQcfF81wU0cg/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      <iframe id="contact-form" src="https://docs.google.com/forms/d/e/1FAIpQLSeiUVy4RcPbxBUmvuhuQPrkMgNSr21mwisPnMpQcfF81wU0cg/viewform?embedded=true" title="SwissCHI Pathways contact form" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     </div>
 
     <div class="form-alternative">
