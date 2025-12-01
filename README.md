@@ -36,12 +36,21 @@ bundle exec jekyll serve --livereload
 
 ## Project Structure
 - `_layouts/`: HTML templates for pages
-- `_includes/`: Reusable HTML components
+- `_includes/`: Reusable HTML components (header, footer)
 - `_sass/`: SCSS stylesheets organized by function
-- `assets/`: Static files (CSS, JS, images, logos)
-- `_data/`: YAML data files for dynamic content
+- `assets/`: Static files
+  - `css/`: Compiled stylesheets
+  - `js/`: JavaScript files
+  - `images/`: Logos, team photos, speaker photos, sponsor logos
+  - `calendar/`: iCalendar (.ics) files for event downloads
+- `_data/`: YAML data files
+  - `events.yml`: Event details (title, date, schedule, speakers)
+  - `team.yml`: Team member information
+  - `sponsors.yml`: Sponsor data organized by event
+  - `features.yml`: Homepage feature highlights
 - `GUIDE.md`: Detailed development guide
 - `STYLE_GUIDE.md`: Visual style guidelines
+- `CLAUDE.md`: AI assistant instructions for codebase
 
 ## Design System
 The site uses a cohesive design system with:
@@ -53,6 +62,26 @@ The site uses a cohesive design system with:
 - **Responsive**: Mobile-first approach with hamburger navigation
 
 See `STYLE_GUIDE.md` for complete design documentation.
+
+## Events System
+Events are managed through `_data/events.yml` with automatic date-based filtering:
+- **Upcoming events**: Full details with schedule, speakers, sponsors, and registration
+- **Past events**: Simplified cards with speaker and sponsor mentions
+- **No events state**: Friendly "coming soon" banner with contact CTA
+
+Each event can include:
+- Schedule with multiple items
+- Speaker information (photo, bio, talk abstract)
+- Sponsor logos linked from `_data/sponsors.yml`
+- iCalendar (.ics) file for calendar downloads
+
+## SEO & Accessibility
+- Unique meta descriptions per page (via front matter `description` field)
+- Canonical URLs to prevent duplicate content
+- Schema.org structured data (Organization, Event)
+- Skip link for keyboard navigation
+- ARIA attributes on decorative elements
+- Accessible iframe titles for embedded forms
 
 ## Logos and Branding
 Multiple logo variants are available in `assets/images/` including:
